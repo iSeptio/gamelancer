@@ -1,0 +1,11 @@
+{% extends 'base_template.html' %}
+{% block body %}
+
+<h3>Upload profile picture:</h3>
+        <form enctype="multipart/form-data" action="" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Save">
+        </form>
+    
+{% endblock%}

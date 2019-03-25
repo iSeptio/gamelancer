@@ -1,0 +1,44 @@
+{% extends 'base_template.html' %} {% block body %}
+
+<div class="col-lg-12">
+  <div class="ibox ">
+    <div class="ibox-title">
+      <h5>Feedback</h5>
+      <div class="ibox-tools">
+        <a class="collapse-link"> <i class="fa fa-chevron-up"></i> </a>       
+        <a class="close-link"> <i class="fa fa-times"></i> </a>
+      </div>
+    </div>
+    <div class="ibox-content">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Left by:</th>
+            <th>Date:</th>
+            <th>Score:</th>
+            <th>Credibility:</th>
+            <th>Opinion:</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          
+            {% for feedback_for in object_list %}
+            <tr></tr>
+            <td>{{ feedback_for.sender.username }}</td>
+            <td>s</td>
+            <td>
+              {{ feedback_for.feedback }}
+              <i class="fa fa-level-down"><i class="fa fa-level-up"></i> </i>
+            </td>
+            <td>{{ feedback_for.sender.feedbackscore }}</td>
+            <td>{{ feedback_for.opinion }}</td>
+        </tr>
+            {% endfor %}
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock%}
